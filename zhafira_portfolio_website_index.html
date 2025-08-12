@@ -1,0 +1,1443 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhafira E. Fawnia - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-light: #f8f9fa;
+            --border: #dee2e6;
+            --code-bg: #282c34;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+
+        .profile-sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+
+        .contact-info {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-content h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navigation */
+        .nav-section {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        /* Interactive Demo Section */
+        .demo-container {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .demo-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .demo-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .demo-button.success {
+            background: var(--success);
+        }
+
+        .demo-button.success:hover {
+            background: #229954;
+        }
+
+        .input-field {
+            padding: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .demo-output {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-height: 200px;
+            margin-top: 1rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .image-option {
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-option:hover {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .image-option.selected {
+            border-color: var(--secondary);
+        }
+
+        .image-option img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Code Display */
+        .code-block {
+            background: var(--code-bg);
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+        }
+
+        .collapsible {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .collapsible-header {
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .collapsible-header:hover {
+            background: #f0f0f0;
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .collapsible-content.active {
+            display: block;
+        }
+
+        /* Publications */
+        .publication-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .publication-authors {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-links {
+            margin-top: 0.5rem;
+        }
+
+        .publication-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 2px solid var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-org {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-details {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .timeline-details ul {
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .project-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.3rem 0;
+            color: var(--text-light);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--secondary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                position: static;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .tab {
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab:hover {
+            color: var(--secondary);
+        }
+
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Warning/Info boxes */
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="about-section">
+                <div class="profile-sidebar">
+                    <div class="profile-image">
+                                <img src="https://raw.githubusercontent.com/ikanberjalandidarat/pictures_repo/main/2024_pic.jpeg", width=190px, height=250px, alt="ZEF">
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">📍 Boston, MA, USA</div>
+                        <div class="contact-item">🎓 Brown University, cross-reg Harvard, prev-MIT</div>
+                        <div class="contact-item">📧 <a href="mailto:zhafiraelhamfawnia@gmail.com">Email</a></div>
+                        <div class="contact-item">📱 +1-617-691-0182</div>
+                        <div class="contact-item">💻 <a href="https://github.com/ikanberjalandidarat" target="_blank">GitHub</a></div>
+                        <div class="contact-item">🌐 <a href="https://ze-fawnia.streamlit.app" target="_blank">Streamlit Apps</a></div>
+                        <div class="contact-item">📄 <a href="https://drive.google.com/file/d/1lfDmYECzq9fUBEscruAna6QnHan_yUjD/view" target="_blank">CV (PDF)</a></div>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <h1>Zhafira E. Fawnia</h1>
+                    <p class="tagline">Software Engineer, AI/ML • Game Enthusiast • Reinforcement Learning (Q Networks, MDPs) for Games, Open Source & Freelance Solo Dev</p>
+                    
+                    <div class="about-text">
+                        <p>
+                            Currently coding, contributing, and learning. 
+                            <br>
+
+                            <strong>I am an incoming Software Engineer III, AI/ML at Google for 2026.</strong>
+                        </p>
+                        <p>
+                            <br>
+                            4+ yoe in programming, 3+ in gaming industry, 1+ in research academia (especially machine learning for human behaviour, mathematics, and reinforcement learning)
+                        </p>
+                        <p>
+                            <br>
+                            I also actively contribute to open-source projects and maintain a freelance consultancy 
+                            helping startups implement ML/AI solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-section">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#interactive-demos">Interactive Demos</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">September 2025 – Present</div>
+                <div class="timeline-title">Master of Science in Computer Science</div>
+                <div class="timeline-org">Brown University, Providence, RI</div>
+                <div class="timeline-details">
+                    • Pathway: AI and Machine Learning (Minor in Game Engines)<br>
+                    • Research focus on intelligent systems, machine learning, reinforcement learning (Q networks, MDPs), computational linear algebra 
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">May 2024 – August 2024</div>
+                <div class="timeline-title">Graduate Certificate in Machine Learning & AI</div>
+                <div class="timeline-org">Massachusetts Institute of Technology</div>
+                <div class="timeline-details">
+                    • 36-month program completed in 3 months<br>
+                    • Projects: MIT D&D Deep Q Network, FLIDT 2024<br>
+                    • <a href="#" style="color: var(--secondary);">View Credentials</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">August 2018 – August 2022</div>
+                <div class="timeline-title">Bachelor of Computer Science (Honours)</div>
+                <div class="timeline-org">Gadjah Mada University, Indonesia</div>
+                <div class="timeline-details">
+                    • GPA: 3.89/4.0 (Magna Cum Laude)<br>
+                    • International Undergraduate Program<br>
+                    • Exchange: Yonsei University (3.85/4.50), University of South Australia (6.0/7.0)<br>
+                    • <a href="https://etd.repository.ugm.ac.id/penelitian/detail/216902" style="color: var(--secondary);">Undergraduate Thesis</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline-item" style="border-left: 4px solid var(--accent);">
+                <div class="timeline-date">Starting 2026</div>
+                <div class="timeline-title">Software Engineer III, AI/ML (Incoming)</div>
+                <div class="timeline-org">Google</div>
+                <div class="timeline-details">
+                    • Joining Google's AI/ML team as Software Engineer III<br>
+                    • Focus on large-scale machine learning systems and AI infrastructure
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">January 2022 – August 2025</div>
+                <div class="timeline-title">Software Engineer II, AI/ML</div>
+                <div class="timeline-org">Garena (Sea Ltd.)</div>
+                <div class="timeline-details">
+                    <ul>
+                        <li>Designed dynamic in-game AI behaviors for RPG prototypes in Unreal Engine 5 with FSM-based decision systems</li>
+                        <li>Built and deployed in-house language models, reducing dependency on external APIs</li>
+                        <li>Developed social listening tool reducing ops workload by 80% and saving $10K/month</li>
+                        <li>Created NLP model for text-to-config conversion, reducing manual configuration time by 95.83%</li>
+                        <li>Implemented ML-powered sentiment classifier achieving 93.17% accuracy</li>
+                        <li>Improved top-up code redemption rates by 20-25% through predictive modeling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">September 2025 – Present</div>
+                <div class="timeline-title">Machine Learning Engineer (Part-time)</div>
+                <div class="timeline-org">VistaLink Technologies LTD</div>
+                <div class="timeline-details">
+                    <ul>
+                        <li>Refining web-scraping protocols and database pipelines for hotel data aggregation</li>
+                        <li>Designing vector database architecture for semantic search algorithms</li>
+                        <li>Developing clustering algorithms for intelligent search recommendations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">August 2022 – Present</div>
+                <div class="timeline-title">Founding Engineer & Solo Developer</div>
+                <div class="timeline-org">ByteSniper</div>
+                <div class="timeline-details">
+                    <ul>
+                        <li>Built solo consultancy generating £1,180+ monthly recurring revenue through Patreon</li>
+                        <li>Develop specialized ML/AI solutions for startups and small businesses</li>
+                        <li>Create educational content and maintain active developer community</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Research Projects</h2>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-title">GoGuard AI Companion</div>
+                    <div class="project-description">
+                        1st Place Alibaba x GoTo Hackathon. AI-powered safety companion for ride-sharing 
+                        with real-time anomaly detection and emergency response systems.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Real-time ML</span>
+                        <span class="tech-tag">Edge Computing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">DiagnoSmart AI</div>
+                    <div class="project-description">
+                        2nd Place BPJS Hackathon. Multimodal medical chatbot with multi-agent collaboration 
+                        to reduce LLM hallucinations in healthcare diagnostics.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Multi-Agent</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">RAG</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://diagnosmart-bpjs.streamlit.app/" target="_blank">Live Demo</a>
+                        <a href="https://youtu.be/iBZLLjvY_08" target="_blank">Video</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">MIT FLIDT Project</div>
+                    <div class="project-description">
+                        Indoor localization system using depth mapping and pyramid analysis for 
+                        detecting power sources and obstacles in indoor environments.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">3D Reconstruction</span>
+                        <span class="tech-tag">MiDaS</span>
+                        <span class="tech-tag">Point Clouds</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.dropbox.com/scl/fo/mqes8r8mbhdl89riz5ti7/ABfl9z2PcmukoDYGDyCV1tc" target="_blank">Video</a>
+                        <a href="#" target="_blank">Paper</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Microsoft ML-Ops Suite</div>
+                    <div class="project-description">
+                        End-to-end ML pipeline for property price prediction using Azure ML Studio, 
+                        achieving R²=0.87 with ensemble methods.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Azure ML</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Elastic Net</span>
+                        <span class="tech-tag">Random Forest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ikanberjalandidarat/Microsoft_Capstone_MBKM" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Documentation</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">BlockBlast Game Engine</div>
+                    <div class="project-description">
+                        Tetris-style puzzle game built with vanilla JavaScript and HTML5 Canvas, 
+                        featuring advanced physics and scoring systems.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML5 Canvas</span>
+                        <span class="tech-tag">Game Physics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://codepen.io/Zhafira-Elham-Fawnia/pen/yyNJzZd" target="_blank">Play Game</a>
+                        <a href="#" target="_blank">Source Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Skin Bundle Generator</div>
+                    <div class="project-description">
+                        Diffusion model-based system for generating game skins using CLIP, BigSleep, 
+                        and IC-GAN to accelerate creative pipelines.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Diffusion Models</span>
+                        <span class="tech-tag">CLIP</span>
+                        <span class="tech-tag">IC-GAN</span>
+                        <span class="tech-tag">ImageNet</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="publication-item">
+                <div class="publication-title">
+                    Hierarchical, Interactive, and Dynamic Predictive Capacity of Current Biopsychosocial Measurements in Psychopathology across the Lifespan
+                </div>
+                <div class="publication-authors">
+                    Roberts, C., Yamamoto, R., <strong>Fawnia, Z.</strong>, Mistry, P., et al.
+                </div>
+                <div class="publication-venue">
+                    Nature (Under Review), 2025 - Multi-institutional collaboration: MIT, Stanford, Brown, UPenn, Columbia, Cambridge
+                </div>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.21203/rs.3.rs-7060126/v1" target="_blank">DOI: 10.21203/rs.3.rs-7060126/v1</a>
+                    <a href="#" target="_blank">Preprint</a>
+                </div>
+                <div style="margin-top: 0.5rem; color: var(--text-light); font-size: 0.9rem;">
+                    • Led ML infrastructure development and ensemble modeling (4 state-of-the-art models)<br>
+                    • Analyzed 23,760+ participants across 1,000+ biopsychosocial measures<br>
+                    • Achieved r²=.49-.56 in predicting ADHD, depression, and anxiety outcomes
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Scikit-learn</li>
+                        <li>LangChain</li>
+                        <li>Transformers</li>
+                        <li>Reinforcement Learning</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Game Development</h3>
+                    <ul class="skill-list">
+                        <li>Unreal Engine 5</li>
+                        <li>Unity</li>
+                        <li>XCode</li>
+                        <li>Game AI Systems</li>
+                        <li>FSM Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Computer Vision</h3>
+                    <ul class="skill-list">
+                        <li>YOLO</li>
+                        <li>OpenCV</li>
+                        <li>GLPN</li>
+                        <li>Depth Estimation</li>
+                        <li>Object Detection</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Google Cloud Platform</li>
+                        <li>Azure ML</li>
+                        <li>Firebase</li>
+                        <li>Docker</li>
+                        <li>Streamlit</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>NLP & LLMs</h3>
+                    <ul class="skill-list">
+                        <li>RAG Systems</li>
+                        <li>Chain of Thought</li>
+                        <li>Multi-Agent Systems</li>
+                        <li>Fine-tuning</li>
+                        <li>Prompt Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Tab functionality
+        function showTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Collapsible functionality
+        function toggleCollapsible(header) {
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+            const arrow = header.querySelector('span:last-child');
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+
+        // Image selection for AOV demo
+        function selectImage(element, imageId) {
+            // Remove selected class from all images
+            const images = document.querySelectorAll('.image-option');
+            images.forEach(img => img.classList.remove('selected'));
+            
+            // Add selected class to clicked image
+            element.classList.add('selected');
+        }
+
+        // AOV Detection Demo
+        function runAOVDetection() {
+            const output = document.getElementById('aov-output');
+            output.innerHTML = '<div class="spinner"></div><p>Running YOLO V8 detection...</p>';
+            
+            setTimeout(() => {
+                output.innerHTML = `
+                    <h4>Detection Results:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                        <thead>
+                            <tr style="background: #f0f0f0;">
+                                <th style="padding: 8px; border: 1px solid #ddd;">Class</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Confidence</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Position (x, y)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">map</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">97.3%</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">(316, 190)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">attack</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">92.4%</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">(2067, 964)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">enemyHealth</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">89.1%</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">(1520, 780)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">friendlyTower</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">95.6%</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">(450, 320)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 4px;">
+                        <strong>Objects Detected:</strong> 4<br>
+                        <strong>Average Confidence:</strong> 93.6%<br>
+                        <strong>Processing Time:</strong> 47ms
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // Gameplay Recommendations
+        function getGameplayRecommendations() {
+            const output = document.getElementById('aov-output');
+            const existingContent = output.innerHTML;
+            
+            if (!existingContent.includes('Detection Results')) {
+                output.innerHTML = '<p style="color: #e74c3c;">Please run detection first!</p>';
+                return;
+            }
+            
+            output.innerHTML = existingContent + '<div class="spinner"></div><p>Generating recommendations...</p>';
+            
+            setTimeout(() => {
+                output.innerHTML = existingContent + `
+                    <div style="margin-top: 2rem; padding: 1rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px;">
+                        <h4 style="color: #155724;">AI Gameplay Recommendations:</h4>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: #155724;">
+                            <li><strong>Immediate Action:</strong> Attack enemy hero - friendlyTower and enemyHealth both detected in range</li>
+                            <li><strong>Positioning:</strong> Move towards objective marker at (1520, 780)</li>
+                            <li><strong>Caution:</strong> Enemy presence detected - maintain safe distance from tower</li>
+                            <li><strong>Strategy:</strong> Use attack button at position (2067, 964) for optimal damage output</li>
+                            <li><strong>Map Awareness:</strong> Mini-map shows clear path to objective</li>
+                        </ul>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+    
+        // Posture Simulation Demo
+        function runPostureSimulation() {
+            const output = document.getElementById('posture-output');
+            const scenario = document.getElementById('scenario-select').value;
+            
+            output.innerHTML = '<div class="spinner"></div><p>Running FSM simulation...</p>';
+            
+            const scenarios = {
+                'park': ['stand_up', 'walk', 'sit_down', 'play', 'run', 'rest'],
+                'morning': ['wake_up', 'stand_up', 'walk', 'cook', 'eat', 'clean'],
+                'workout': ['stand_up', 'stretch', 'run', 'exercise', 'rest', 'hydrate'],
+                'workday': ['stand_up', 'walk', 'sit_down', 'work', 'meeting', 'lunch'],
+                'gathering': ['stand_up', 'greet', 'chat', 'eat', 'dance', 'leave'],
+                'lazy': ['wake_up', 'sit_down', 'watch_tv', 'snack', 'nap', 'sleep']
+            };
+            
+            setTimeout(() => {
+                const actions = scenarios[scenario];
+                output.innerHTML = `
+                    <h4>Posture Transition Simulation: ${scenario.charAt(0).toUpperCase() + scenario.slice(1)} Scenario</h4>
+                    <div style="margin-top: 1rem;">
+                        <h5>State Transitions:</h5>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                            ${actions.map((action, i) => `
+                                <div style="display: flex; align-items: center;">
+                                    <div style="padding: 0.5rem 1rem; background: ${i === 0 ? '#3498db' : '#27ae60'}; color: white; border-radius: 4px;">
+                                        ${action}
+                                    </div>
+                                    ${i < actions.length - 1 ? '<span style="margin: 0 0.5rem;">→</span>' : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: #f0f0f0; border-radius: 4px;">
+                        <strong>Simulation Stats:</strong><br>
+                        • Total states: ${actions.length}<br>
+                        • Transitions: ${actions.length - 1}<br>
+                        • Emotion changes: 3<br>
+                        • Graph nodes created: 14<br>
+                        • Animation frames: ${actions.length * 2}
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // DQN Demo functions
+        function showDQNArchitecture() {
+            const output = document.getElementById('dqn-output');
+            output.innerHTML = `
+                <h4>Deep Q-Network Architecture</h4>
+                <div style="margin-top: 1rem;">
+                    <pre style="background: #f0f0f0; padding: 1rem; border-radius: 4px;">
+Neural Network:
+├── Input Layer (State Size: 84)
+│   └── Output Layer (Action Size: 12)
+    └── Q-values for each action
+
+Training Parameters:
+• Learning Rate: 0.0001
+• Batch Size: 32
+• Replay Buffer: 10,000
+• Target Update: Every 1000 steps
+• Epsilon Decay: 0.995
+• Discount Factor (γ): 0.99
+                    </pre>
+                </div>
+                <div style="margin-top: 1rem; padding: 1rem; background: #d1ecf1; border: 1px solid #bee5eb; border-radius: 4px;">
+                    <strong>Key Features:</strong><br>
+                    • Double DQN to reduce overestimation bias<br>
+                    • Prioritized Experience Replay for efficient learning<br>
+                    • Dueling Network Architecture for value/advantage separation<br>
+                    • Custom reward shaping for D&D gameplay mechanics
+                </div>
+            `;
+        }
+
+        function showDQNResults() {
+            const output = document.getElementById('dqn-output');
+            output.innerHTML = `
+                <h4>Training Results</h4>
+                <div style="margin-top: 1rem;">
+                    <div style="background: #f0f0f0; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                        <strong>Performance Metrics:</strong><br>
+                        • Final Win Rate: 78.3%<br>
+                        • Average Episode Reward: 245.7<br>
+                        • Convergence: ~800 episodes<br>
+                        • Training Time: 4.2 hours on GPU
+                    </div>
+                    <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 1rem; border-radius: 4px;">
+                        <strong>Learned Strategies:</strong><br>
+                        • Prioritizes healing when HP < 30%<br>
+                        • Effective spell usage against multiple enemies<br>
+                        • Optimal positioning for ranged attacks<br>
+                        • Resource management (potions/mana)<br>
+                        • Adaptive combat based on enemy types
+                    </div>
+                </div>
+            `;
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+        <!-- Interactive Demos Section -->
+        <section id="interactive-demos" class="section">
+            <h2 class="section-title">Interactive Research Demos</h2>
+            
+            <!-- Tabs for different demos -->
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('aov-demo')">AOV Object Detection</button>
+                <button class="tab" onclick="showTab('depth-demo')">Depth Prediction</button>
+                <button class="tab" onclick="showTab('posture-demo')">Posture Transition</button>
+                <button class="tab" onclick="showTab('dqn-demo')">DQN for D&D</button>
+            </div>
+
+            <!-- AOV Object Detection Demo -->
+            <div id="aov-demo" class="tab-content active">
+                <div class="demo-container">
+                    <div class="demo-title">🎮 Arena of Valor Real-Time Object Detection (YOLO V8)</div>
+                    <div class="demo-description">
+                        This system uses YOLO V8 for real-time in-game object detection in Arena of Valor, 
+                        combined with an LLM-powered recommendation system using RAG (Retrieval-Augmented Generation) 
+                        and Chain of Thought (CoT) reasoning for intelligent gameplay suggestions.
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <strong>Classes Detected:</strong> map, attack, recall, enemyHealth, Auto, friendlyTower, enemyTower
+                    </div>
+
+                    <div class="demo-controls">
+                        <h4>Select a test image:</h4>
+                    </div>
+                    
+                    <div class="image-grid">
+                        <div class="image-option selected" onclick="selectImage(this, 'aov1')">
+                            <img src="https://play-lh.googleusercontent.com/QyrBwz9alLhUrd7x3LNDDreMiHslhiSxf2_-9G1QxWtYkb66UJiJaQRZUracLXFEDw=w526-h296-rw" alt="AOV Test 1">
+                        </div>
+                        <div class="image-option" onclick="selectImage(this, 'aov2')">
+                            <img src="https://mobitekno.com/wp-content/uploads/2017/12/20171025001837_Review_Arena_of_Valor__Hanya_Untuk_Gamer_Berjiwa_Kompetitif-768x432.jpg" alt="AOV Test 2">
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <button class="demo-button" onclick="runAOVDetection()">Run Detection</button>
+                        <button class="demo-button success" onclick="getGameplayRecommendations()">Get Gameplay Recommendations</button>
+                    </div>
+
+                    <div class="demo-output" id="aov-output">
+                        <p style="color: #999;">Click "Run Detection" to see object detection results</p>
+                    </div>
+
+
+                    <div class="alert alert-warning">
+                        <strong>Note:</strong> This is a demo interface. The actual model runs on GPU/TPU for real-time performance. 
+                        <a href="https://github.com/ikanberjalandidarat" target="_blank">View full implementation on GitHub</a> or, on my streamlit app, <a href="https://www.ze-fawnia.streamlit.app"> here</a>!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Depth Prediction Demo -->
+            <div id="depth-demo" class="tab-content">
+                <div class="demo-container">
+                    <div class="demo-title">🎯 Free Fire Depth Prediction with GLPN</div>
+                    <div class="demo-description">
+                        Using Global-Local Path Networks (GLPN) for in-game environment depth prediction 
+                        to enhance third-person shooter gameplay. This model estimates depth from single 
+                        RGB images to improve spatial understanding and gameplay mechanics.
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>Paper Reference:</strong> <a href="https://arxiv.org/abs/1908.00463" target="_blank">DIODE: A Dense Indoor and Outdoor Depth Dataset</a>
+                    </div>
+
+                    <div class="demo-output" id="depth-output">
+                        <p style="color: #999;">Check out the demo through my streamlit: <a href="https://www.ze-fawnia.streamlit.app">here</a></p>
+                    </div>
+
+
+                    <div class="alert alert-success">
+                        <strong>Try it on Colab:</strong> 
+                        <a href="https://colab.research.google.com/drive/1qhPOZQXN-lLPBUPtczG1ZXW3gWmZzLEF" target="_blank">
+                            Open in Google Colab for GPU acceleration
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posture Transition Demo -->
+            <div id="posture-demo" class="tab-content">
+                <div class="demo-container">
+                    <div class="demo-title">🏃 In-Game Posture Transition Simulation</div>
+                    <div class="demo-description">
+                        Simulating NPC behavior using Finite State Machines (FSM) with graph visualization. 
+                        This system models character state transitions for game animations, inspired by The Sims 
+                        posture system and object-oriented programming patterns.
+                    </div>
+
+                    <div class="demo-controls">
+                        <select id="scenario-select" class="input-field" style="max-width: 300px;">
+                            <option value="park">Park Scenario</option>
+                            <option value="morning">Morning Routine</option>
+                            <option value="workout">Workout Session</option>
+                            <option value="workday">Busy Workday</option>
+                            <option value="gathering">Social Gathering</option>
+                            <option value="lazy">Lazy Weekend</option>
+                        </select>
+                        <button class="demo-button" onclick="runPostureSimulation()">Run Simulation</button>
+                    </div>
+
+                    <div class="demo-output" id="posture-output">
+                        <p style="color: #999;">Select a scenario and click "Run Simulation"</p>
+                    </div>
+
+                    <div class="collapsible">
+                        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                            <span>View FSM Implementation</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <pre class="code-block">
+class SimState:
+    def __init__(self, sim):
+        self.sim = sim
+
+    def transition(self, new_state):
+        self.sim.state.on_exit()
+        self.sim.state = new_state
+        new_state.on_enter()
+
+    def handle_action(self, action):
+        pass
+
+class Standing(SimState):
+    def on_enter(self):
+        self.sim.current_position = 'Standing'
+        print(f"Sim is now standing and feeling {self.sim.emotion}.")
+        self.sim.update_graph()
+
+    def handle_action(self, action):
+        if action == "sit_down":
+            self.transition(Sitting(self.sim))
+        elif action == "walk":
+            self.transition(Walking(self.sim))
+        elif action == "run":
+            self.transition(Running(self.sim))
+
+# Create state graph
+self.graph = nx.DiGraph()
+states = ["Sitting", "Standing", "Walking", "Running", 
+          "Sleeping", "Cleaning", "Eating", "Playing"]
+self.graph.add_nodes_from(states)
+self.graph.add_edges_from([
+    ("Sitting", "Standing"), 
+    ("Standing", "Walking"),
+    ("Walking", "Running"),
+    # ... more transitions
+])
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DQN Demo -->
+            <div id="dqn-demo" class="tab-content">
+                <div class="demo-container">
+                    <div class="demo-title">🎲 MIT D&D Deep Q-Network</div>
+                    <div class="demo-description">
+                        Reinforcement Learning agent for Dungeons & Dragons using Deep Q-Networks. 
+                        This project explores MDPs (Markov Decision Processes) and Q-learning for 
+                        optimizing gameplay strategies in complex, multi-agent environments.
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>Key Concepts:</strong> Q-Learning, Experience Replay, Target Networks, ε-greedy exploration
+                    </div>
+
+                    <div class="demo-controls">
+                        <button class="demo-button" onclick="showDQNArchitecture()">View Architecture</button>
+                        <button class="demo-button success" onclick="showDQNResults()">Show Training Results</button>
+                    </div>
+
+                    <div class="demo-output" id="dqn-output">
+                        <div style="padding: 20px;">
+                            <h4>DQN Architecture for D&D</h4>
+                            <p>State Space: Character stats, inventory, position, enemy states</p>
+                            <p>Action Space: Move, Attack, Cast Spell, Use Item, Defend</p>
+                            <p>Reward Function: +100 for defeating enemies, -50 for death, +10 for treasure</p>
+                        </div>
+                    </div>
+
+                    <div class="collapsible">
+                        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                            <span>View DQN Implementation</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <pre class="code-block">
+class DQN(nn.Module):
+    def __init__(self, state_size, action_size):
+        super(DQN, self).__init__()
+        self.fc1 = nn.Linear(state_size, 128)
+        self.fc2 = nn.Linear(128, 128)
+        self.fc3 = nn.Linear(128, action_size)
+        
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        return self.fc3(x)
+
+def train_dqn(episodes=1000):
+    for episode in range(episodes):
+        state = env.reset()
+        total_reward = 0
+        
+        for step in range(max_steps):
+            # ε-greedy action selection
+            if random.random() < epsilon:
+                action = env.action_space.sample()
+            else:
+                q_values = model(state)
+                action = torch.argmax(q_values)
+            
+            next_state, reward, done, _ = env.step(action)
+            
+            # Store in replay buffer
+            replay_buffer.push(state, action, reward, next_state, done)
+            
+            # Training step
+            if len(replay_buffer) > batch_size:
+                batch = replay_buffer.sample(batch_size)
+                loss = compute_td_loss(batch)
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <strong>Resources:</strong> 
+                        <a href="https://colab.research.google.com/drive/1gnvxaZ5l3EaWLMUYGuNPGC-abiiUgMj0" target="_blank">Colab Notebook</a> | 
+                        <a href="https://docs.google.com/presentation/d/1vW2UBiBlWAB5behVvWsPcUFa5cu4p7A43oS2SdIP1Sw" target="_blank">Presentation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
